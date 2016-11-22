@@ -11,13 +11,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LightSpeedC/react-examples.git"
+    "url": "git+https://github.com/react-examples/react-examples.git"
   },
   "keywords": ["react"],
   "author": "LightSpeedC",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/LightSpeedC/react-examples/issues"
+    "url": "https://github.com/react-examples/react-examples/issues"
   },
-  "homepage": "https://github.com/LightSpeedC/react-examples#readme"
+  "homepage": "https://github.com/react-examples/react-examples#readme"
 }
