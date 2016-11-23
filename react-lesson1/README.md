@@ -1,3 +1,6 @@
+React v15をやってみよう (1) - まずはHTMLだけで
+====
+
 React.js Examples - Lesson 1
 ====
 
@@ -555,12 +558,15 @@ ReactDOM.render(<ToDoListApp/>, container);
 ちなみにこの記事に書いてあるやり方は production には耐えられないよ。  
 だけど1つのHTMLファイルで始められるので、勉強を始めるのには、いいんじゃないかな。
 
-+ とりあえず始めるのに1つのHTMLファイルでReact.jsを書いた
+この記事の概要と次回以降の課題：
+
++ とりあえず始めるのに各々1つのHTMLファイルでReact.jsを書いた
 + 複数のモジュールに分けていないので、大規模な開発をするには別の何かが必要となる
 + npm i -D (npm install --save-dev) は開発用だし
 + To Do List も1つのコンポーネントで書くもんじゃないし
 + JSXをブラウザ側でJSに変換する方法はもうやっちゃいけないことだ
++ Ajax/xhr/fetch/request等もやんなきゃいけないし
 
 Lesson 2 に続く。と、思う。
 
-https://github.com/react-examples/react-examples/tree/master/react-lesson1
+[https://github.com/react-examples/react-examples/tree/master/react-lesson1#readme](https://github.com/react-examples/react-examples/tree/master/react-lesson1#readme)
