@@ -1,0 +1,42 @@
+<script src="node_modules/react/dist/react.min.js"></script>
+<script src="node_modules/react-dom/dist/react-dom.min.js"></script>
+<script src="node_modules/babel-core/browser.min.js"></script>
+
+<div id="container"/>
+
+<script type="text/babel">
+
+// カウンター
+class LegacyCounter extends React.Component {
+
+	// コンストラクタ
+	constructor(props, context) {
+		super(props, context);
+		this.state = {counter: 0};
+		this.onIncr = this.onIncr.bind(this);
+	}
+
+	// 増/プラス
+	onIncr() {
+		this.setState({counter: this.state.counter + 1});
+	}
+
+	// 減/マイナス
+	onDecr() {
+		this.setState({counter: this.state.counter - 1});
+	}
+
+	// レンダー
+	render() {
+		return <div>
+			カウンター: {this.state.counter}
+			<br/>
+			<button onClick={this.onIncr}>増</button>
+			<button onClick={this.onDecr.bind(this)}>減</button>
+		</div>;
+	}
+}
+
+ReactDOM.render(<LegacyCounter/>, container);
+
+</script>

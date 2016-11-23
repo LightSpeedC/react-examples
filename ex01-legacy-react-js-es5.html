@@ -1,7 +1,10 @@
 <script src="node_modules/react/dist/react.min.js"></script>
 <script src="node_modules/react-dom/dist/react-dom.min.js"></script>
+
 <div id="container"/>
+
 <script>
+
 var Hello = React.createClass({
 	render: function () {
 		return React.createElement('div', null,
@@ -17,4 +20,5 @@ ReactDOM.render(React.createElement(Hello), container);
 setInterval(function () {
 		ReactDOM.render(React.createElement(Hello), container);
 	}, 1000);
+
 </script>

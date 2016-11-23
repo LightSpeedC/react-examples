@@ -1,0 +1,106 @@
+<script src="node_modules/react/dist/react.min.js"></script>
+<script src="node_modules/react-dom/dist/react-dom.min.js"></script>
+<script src="node_modules/babel-core/browser.min.js"></script>
+
+<div id="container"/>
+
+<script type="text/babel">
+
+// 私のコンポーネント (onメソッドはthisをbind)
+class MyComponent extends React.Component {
+
+	// コンストラクタ
+	constructor(props, context) {
+		super(props, context);
+		Object.getOwnPropertyNames(this.constructor.prototype)
+			.forEach(x => x.substr(0, 2) === 'on' &&
+				typeof this[x] === 'function' &&
+				(this[x] = this[x].bind(this)));
+	}
+}
+
+// タスクのクラス
+class Task {
+
+	// コンストラクタ
+	constructor(title, done) {
+		this._key = Task.nextKey++;
+		this._title = title;
+		this._done = !!done;
+	}
+	getKey()   { return this._key; }
+	getTitle() { return this._title; }
+	isDone()   { return this._done; }
+	toggle()   { this._done = !this._done; }
+}
+Task.nextKey = 0;
+
+// To Do List アプリ
+class ToDoListApp extends MyComponent {
+
+	// コンストラクタ
+	constructor(props, context) {
+		super(props, context);
+		this.state = {title: '',
+			list: [new Task('AAA'),
+				new Task('BBB', true),
+				new Task('CCC')]};
+		//console.log(JSON.stringify(this.state, null, '  '));
+	}
+
+	// 入力中のタスクのタイトルが変更された時
+	onChangeTitle(ev) {
+		this.setState({title: ev.target.value});
+	}
+
+	// タスクを追加する
+	onAddTask() {
+		// 入力中のタスクのタイトルがある時にタスクを追加する
+		if (this.state.title)
+			this.setState(s => ({title: '',
+				list: s.list.concat(new Task(s.title))}));
+		return false; // submitされない様にfalseを返す
+	}
+
+	// 完了済みのタスクを削除する
+	onRemoveTasks() {
+		// 未完了タスクのリストに変更する(完了済みタスクを除外する)
+		this.setState(s => ({list: s.list.filter(task => !task.isDone())}));
+	}
+
+	// タスクの完了済みと未完了をトグルする
+	toggleTask(task) {
+		task.toggle();
+		this.forceUpdate();
+	}
+
+	// タスクのスタイルのスタイル(見映え)を返す
+	getTaskStyle(task) {
+		return {textDecoration: task.isDone() ? 'line-through' : 'none',
+			color: task.isDone() ? 'lightgray' : 'black'}
+	}
+
+	// レンダー
+	render() {
+		return <div>
+			<form onSubmit={this.onAddTask}>
+				タスク: <input value={this.state.title} onChange={this.onChangeTitle}
+					placeholder="タスクのタイトル" autofocus/>
+				<button children="追加" onClick={this.onAddTask}
+					type="submit" disabled={!this.state.title}/>
+				<button children="削除" onClick={this.onRemoveTasks}
+					type="button" disabled={!this.state.list.some(task => task.isDone())}/>
+			</form>
+			{this.state.list.map(task =>
+				<div key={task.getKey()} onClick={() => this.toggleTask(task)}
+					style={this.getTaskStyle(task)}>
+					<input type="checkbox" checked={task.isDone()}/>
+					{task.getTitle()}
+				</div>)}
+		</div>;
+	}
+}
+
+ReactDOM.render(<ToDoListApp/>, container);
+
+</script>

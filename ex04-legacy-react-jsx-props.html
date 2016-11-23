@@ -1,0 +1,19 @@
+<script src="node_modules/react/dist/react.min.js"></script>
+<script src="node_modules/react-dom/dist/react-dom.min.js"></script>
+<script src="node_modules/babel-core/browser.min.js"></script>
+
+<div id="container"/>
+
+<script type="text/babel">
+
+class Hello extends React.Component {
+	render() {
+		return <div>
+			Hello {this.props.name}
+		</div>;
+	}
+}
+
+ReactDOM.render(<Hello name="React!"/>, container);
+
+</script>
