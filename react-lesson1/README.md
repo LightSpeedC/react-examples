@@ -540,7 +540,7 @@ class ToDoListApp extends MyComponent {
 		this.forceUpdate();
 	}
 
-	// タスクのスタイルのスタイル(見映え)を返す
+	// タスクのスタイル(見映え)を返す
 	getTaskStyle(task) {
 		return {textDecoration: task.isDone() ? 'line-through' : 'none',
 			color: task.isDone() ? 'lightgray' : 'black'}
