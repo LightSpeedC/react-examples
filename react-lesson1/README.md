@@ -1,15 +1,14 @@
 React v15をやってみよう (1) - まずはHTMLだけで
 ====
 
-React.js Examples - Lesson 1
-====
-
 まずはHTMLファイルだけで、`React v15`を感じてみよう。
+----
 
 ![React.js 15.4](../images/react-15-4.png)
 
-はじめに
-----
+- - -
+
+### はじめに
 
 `React v15`を始めたいけど、  
 たくさんキーワードやツールが出てきて、環境をそろえろ、とか  
@@ -23,6 +22,8 @@ React.js Examples - Lesson 1
 今のところGrunt/Gulp/Browserify/WebPack/TypeScriptとか、全部無しで!  
 Web/HTTPサーバーも無しで!  
 素の`React.js`から始めましょう。
+
+- - -
 
 手順
 ----
@@ -42,6 +43,8 @@ v3.x.x
 
 インストできた?
 
+- - -
+
 ### 1. ディレクトリを作成し`npm`を初期化
 
 まず、Webプロジェクトを開始する時に最初にやることだ。
@@ -57,6 +60,8 @@ descriptionやauthorくらいは書いておこう。
 
 ※既に`package.json`がある場合は`npm install`で依存ファイルをダウンロードできる。
 
+- - -
+
 ### 2. `react`と`react-dom`をインストール
 
 `React.js`をやるのに最低限必要なもの、  
@@ -68,6 +73,8 @@ $ npm i -D react react-dom
 
 `node_modules`ディレクトリの下に`react`と`react-dom`ができる。  
 `package.json`の`devDependencies`に追加されたことを確認。
+
+- - -
 
 ### 3. `ex01-legacy-react-js-es5.html`を作成し、ブラウザで開く
 
@@ -121,7 +128,9 @@ setInterval(function () {
 </script>
 ```
 
-### 5. `ex02-legacy-react-js-es6.html`を作成し、ブラウザで開く
+- - -
+
+### 4. `ex02-legacy-react-js-es6.html`を作成し、ブラウザで開く
 
 ES5は今時じゃないので、ES6(ES2015)で書き換える。  
 
@@ -168,7 +177,9 @@ setInterval(() =>
 </script>
 ```
 
-### 6. とりあえず簡単にJSXを使うために古いv5系の`babel-core`を使ってみる
+- - -
+
+### 5. とりあえず簡単にJSXを使うために古いv5系の`babel-core`を使ってみる
 
 ```bash
 $ npm i -D babel-core@5
@@ -178,7 +189,9 @@ $ npm i -D babel-core@5
 https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.min.js  
 babel-core@6は、後でやる。
 
-### 7. `ex03-legacy-react-jsx-babel5.html`を作成し、ブラウザで開く
+- - -
+
+### 6. `ex03-legacy-react-jsx-babel5.html`を作成し、ブラウザで開く
 
 `React.createElement()`はウザイのでJSXで書く。  
 今回は古いbabel-core@5を使っておく。  
@@ -218,7 +231,9 @@ setInterval(() =>
 </script>
 ```
 
-### 8. `ex04-legacy-react-jsx-props.html`を作成し、ブラウザで開く
+- - -
+
+### 7. `ex04-legacy-react-jsx-props.html`を作成し、ブラウザで開く
 
 `<Hello name="React!">`の様に`props`を使ってみる。  
 コンポーネント側では`this.props.name`として使える。
@@ -249,7 +264,9 @@ ReactDOM.render(<Hello name="React!"/>, container);
 </script>
 ```
 
-### 9. `ex05-legacy-react-jsx-sfc.html`を作成し、ブラウザで開く
+- - -
+
+### 8. `ex05-legacy-react-jsx-sfc.html`を作成し、ブラウザで開く
 
 `props`くらいしか使わず、状態を持たないコンポーネントなら  
 `SFC` (Stateless Functional Components) を使う。  
@@ -278,7 +295,9 @@ ReactDOM.render(<Hello name="React!"/>, container);
 </script>
 ```
 
-### 10. `ex06-legacy-react-jsx-counter.html`を作成し、ブラウザで開く
+- - -
+
+### 9. `ex06-legacy-react-jsx-counter.html`を作成し、ブラウザで開く
 
 中に状態`state`を持つコンポーネントの例として、カウンターを作る。  
 状態を初期化するには`constructor()`内で`this.state = {...};`とする。
@@ -339,7 +358,9 @@ ReactDOM.render(<LegacyCounter/>, container);
 </script>
 ```
 
-### 11. `ex07-legacy-react-jsx-my-component.html`を作成し、ブラウザで開く
+- - -
+
+### 10. `ex07-legacy-react-jsx-my-component.html`を作成し、ブラウザで開く
 
 カウンターの例を改良する。
 
@@ -414,7 +435,9 @@ ReactDOM.render(<MyCounter/>, container);
 </script>
 ```
 
-### 12. `ex08-legacy-react-jsx-todo.html`を作成し、ブラウザで開く
+- - -
+
+### 11. `ex08-legacy-react-jsx-todo.html`を作成し、ブラウザで開く
 
 では、ちょっと、To Do List アプリを作ってみる。
 
@@ -552,7 +575,9 @@ ReactDOM.render(<ToDoListApp/>, container);
 </script>
 ```
 
-### 13. 終わりに
+- - -
+
+### 12. 終わりに
 
 とりあえず、一気に書いてみた。
 
