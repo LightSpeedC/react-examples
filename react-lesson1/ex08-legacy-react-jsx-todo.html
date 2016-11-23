@@ -1,10 +1,14 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
 <script src="node_modules/react/dist/react.min.js"></script>
 <script src="node_modules/react-dom/dist/react-dom.min.js"></script>
 <script src="node_modules/babel-core/browser.min.js"></script>
 
-<div id="container"/>
+<div id="container"></div>
 
 <script type="text/babel">
+//<script>
 
 // 私のコンポーネント (onメソッドはthisをbind)
 class MyComponent extends React.Component {
@@ -21,6 +25,7 @@ class MyComponent extends React.Component {
 
 // タスクのクラス
 class Task {
+	// static nextKey = 0;
 
 	// コンストラクタ
 	constructor(title, done) {
@@ -42,10 +47,9 @@ class ToDoListApp extends MyComponent {
 	constructor(props, context) {
 		super(props, context);
 		this.state = {title: '',
-			list: [new Task('AAA'),
-				new Task('BBB', true),
-				new Task('CCC')]};
-		//console.log(JSON.stringify(this.state, null, '  '));
+			list: [new Task('最初のタスク'),
+				new Task('完了したタスク', true),
+				new Task('最後のタスク')]};
 	}
 
 	// 入力中のタスクのタイトルが変更された時
@@ -56,21 +60,33 @@ class ToDoListApp extends MyComponent {
 	// タスクを追加する
 	onAddTask() {
 		// 入力中のタスクのタイトルがある時にタスクを追加する
-		if (this.state.title)
-			this.setState(s => ({title: '',
-				list: s.list.concat(new Task(s.title))}));
-		return false; // submitされない様にfalseを返す
+		this.state.title &&
+		this.setState(s => ({title: '',
+			list: s.list.concat(new Task(s.title))}));
+		// focus取得対応
+		this.elemTitle && this.elemTitle.focus();
 	}
 
-	// 完了済みのタスクを削除する
-	onRemoveTasks() {
+	// 完了済みのタスクを削除する(チェックして削除)
+	onRemoveCompletedTasks() {
 		// 未完了タスクのリストに変更する(完了済みタスクを除外する)
 		this.setState(s => ({list: s.list.filter(task => !task.isDone())}));
+		// focus取得対応
+		this.elemTitle && this.elemTitle.focus();
+	}
+
+	// 特定のタスクを削除する(Xをクリック)
+	removeTask(task) {
+		this.setState(s => ({list: s.list.filter(t => t !== task)}));
+		// focus取得対応
+		this.elemTitle && this.elemTitle.focus();
 	}
 
 	// タスクの完了済みと未完了をトグルする
 	toggleTask(task) {
 		task.toggle();
+		// focus取得対応
+		this.elemTitle && this.elemTitle.focus();
 		this.forceUpdate();
 	}
 
@@ -83,19 +99,22 @@ class ToDoListApp extends MyComponent {
 	// レンダー
 	render() {
 		return <div>
-			<form onSubmit={this.onAddTask}>
-				タスク: <input value={this.state.title} onChange={this.onChangeTitle}
-					placeholder="タスクのタイトル" autofocus/>
+			{/* 新規タスクのタイトル入力フォーム */}
+			<div onKeyDown={/*Enterキー対応*/ ev => ev.keyCode !== 13 || this.onAddTask()}>
+				タスク: <input placeholder="タスクのタイトル" autofocus
+					value={this.state.title} onChange={this.onChangeTitle}
+					ref={/*focus取得対応*/ elem => this.elemTitle = elem}/>
 				<button children="追加" onClick={this.onAddTask}
-					type="submit" disabled={!this.state.title}/>
-				<button children="削除" onClick={this.onRemoveTasks}
-					type="button" disabled={!this.state.list.some(task => task.isDone())}/>
-			</form>
+					disabled={!this.state.title}/> {' '}
+				<button children="完了済みを削除" onClick={this.onRemoveCompletedTasks}
+					disabled={!this.state.list.some(task => task.isDone())}/>
+			</div>
+			{/* タスクのリスト */}
 			{this.state.list.map(task =>
-				<div key={task.getKey()} onClick={() => this.toggleTask(task)}
-					style={this.getTaskStyle(task)}>
+				<div key={task.getKey()} onClick={() => this.toggleTask(task)}>
+					<span children="X" onClick={() => this.removeTask(task)}/>
 					<input type="checkbox" checked={task.isDone()}/>
-					{task.getTitle()}
+					<span children={task.getTitle()} style={this.getTaskStyle(task)}/>
 				</div>)}
 		</div>;
 	}
