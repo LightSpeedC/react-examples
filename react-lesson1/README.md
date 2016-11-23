@@ -3,6 +3,8 @@ React.js Examples - Lesson 1
 
 まずはHTMLファイルだけで、`React v15`を感じてみよう。
 
+![React.js 15.4](../images/react-15-4.png)
+
 はじめに
 ----
 
