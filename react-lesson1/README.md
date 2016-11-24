@@ -76,7 +76,7 @@ $ npm i -D react react-dom
 
 - - -
 
-### 3. `ex01-legacy-react-js-es5.html`を作成し、ブラウザで開く
+### 3. `react11-js-es5.html`を作成し、ブラウザで開く
 
 Webなので、まずはHTMLファイルを作る。
 
@@ -98,7 +98,7 @@ HelloクラスのrenderメソッドでHTMLを生成する感じだ。
 
 ※素の`React.createClass`や`React.createElement`は意識しなくてよい。
 
-```html:ex01-legacy-react-js-es5.html
+```html:react11-js-es5.html
 <!DOCTYPE html>
 <meta charset="UTF-8">
 
@@ -130,7 +130,7 @@ setInterval(function () {
 
 - - -
 
-### 4. `ex02-legacy-react-js-es6.html`を作成し、ブラウザで開く
+### 4. `react12-js-es6.html`を作成し、ブラウザで開く
 
 ES5は今時じゃないので、ES6(ES2015)で書き換える。  
 
@@ -147,7 +147,7 @@ Hello Legacy React ES6! 12:34:56
 `Hello`クラスをclass構文で作成する。  
 ちょっとマシになったが、まだ`React.createElement`がウザい。
 
-```html:ex02-legacy-react-js-es6.html
+```html:react12-js-es6.html
 <!DOCTYPE html>
 <meta charset="UTF-8">
 
@@ -191,13 +191,13 @@ babel-core@6は、後でやる。
 
 - - -
 
-### 6. `ex03-legacy-react-jsx-babel5.html`を作成し、ブラウザで開く
+### 6. `react13-jsx-babel5.html`を作成し、ブラウザで開く
 
 `React.createElement()`はウザイのでJSXで書く。  
 今回は古いbabel-core@5を使っておく。  
 ※この方法は非推奨だ。効率が悪いので後で変更するよ。
 
-```html:ex03-legacy-react-jsx-babel5.html
+```html:react13-jsx-babel5.html
 <!DOCTYPE html>
 <meta charset="UTF-8">
 
@@ -233,12 +233,12 @@ setInterval(() =>
 
 - - -
 
-### 7. `ex04-legacy-react-jsx-props.html`を作成し、ブラウザで開く
+### 7. `react14-jsx-props.html`を作成し、ブラウザで開く
 
 `<Hello name="React!">`の様に`props`を使ってみる。  
 コンポーネント側では`this.props.name`として使える。
 
-```html:ex04-legacy-react-jsx-props.html
+```html:react14-jsx-props.html
 <!DOCTYPE html>
 <meta charset="UTF-8">
 
@@ -266,13 +266,13 @@ ReactDOM.render(<Hello name="React!"/>, container);
 
 - - -
 
-### 8. `ex05-legacy-react-jsx-sfc.html`を作成し、ブラウザで開く
+### 8. `react15-jsx-sfc.html`を作成し、ブラウザで開く
 
 `props`くらいしか使わず、状態を持たないコンポーネントなら  
 `SFC` (Stateless Functional Components) を使う。  
 classの場合の`this.props.xxx`を、SFCでは`props.xxx`と変更すること。
 
-```html:ex05-legacy-react-jsx-sfc.html
+```html:react15-jsx-sfc.html
 <!DOCTYPE html>
 <meta charset="UTF-8">
 
@@ -297,7 +297,7 @@ ReactDOM.render(<Hello name="React!"/>, container);
 
 - - -
 
-### 9. `ex06-legacy-react-jsx-counter.html`を作成し、ブラウザで開く
+### 9. `react16-jsx-count.html`を作成し、ブラウザで開く
 
 中に状態`state`を持つコンポーネントの例として、カウンターを作る。  
 状態を初期化するには`constructor()`内で`this.state = {...};`とする。
@@ -309,7 +309,7 @@ onIncrとonDecrで違う2種類のやり方を試してみた。
 `this.setState()`で新しい状態をセットする。状態オブジェクトを引数に渡す。  
 (実際には状態オブジェクトのshallow mergeだ)
 
-```html:ex06-legacy-react-jsx-counter.html
+```html:react16-jsx-count.html
 <!DOCTYPE html>
 <meta charset="UTF-8">
 
@@ -360,7 +360,7 @@ ReactDOM.render(<LegacyCounter/>, container);
 
 - - -
 
-### 10. `ex07-legacy-react-jsx-my-component.html`を作成し、ブラウザで開く
+### 10. `react17-jsx-inherit.html`を作成し、ブラウザで開く
 
 カウンターの例を改良する。
 
@@ -374,7 +374,7 @@ on以外ではhandleで始まるメソッドにも、thisをbindしておくの�
 `<button>...</button>`を`<button children="..."/>`の様に記述することもできる。  
 閉じタグを省略できるので便利だ。
 
-```html:ex07-legacy-react-jsx-my-component.html
+```html:react17-jsx-inherit.html
 <!DOCTYPE html>
 <meta charset="UTF-8">
 
@@ -437,7 +437,7 @@ ReactDOM.render(<MyCounter/>, container);
 
 - - -
 
-### 11. `ex08-legacy-react-jsx-todo.html`を作成し、ブラウザで開く
+### 11. `react18-jsx-todo.html`を作成し、ブラウザで開く
 
 では、ちょっと、To Do List アプリを作ってみる。
 
@@ -447,7 +447,7 @@ Reactコンポーネントとして、少し大きいが、ToDoListAppクラス�
 新規タスク用のタイトル入力用のinputや、追加・削除のボタン、などだ。  
 タスクの表示にはタイトル以外に終わったことを示すチェックボックスなどを考える。
 
-```html:ex08-legacy-react-jsx-todo.html
+```html:react18-jsx-todo.html
 <!DOCTYPE html>
 <meta charset="UTF-8">
 
