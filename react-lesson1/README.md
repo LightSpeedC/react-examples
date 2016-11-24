@@ -595,4 +595,14 @@ ReactDOM.render(<ToDoListApp/>, container);
 
 Lesson 2 に続く。と、思う。
 
-[https://github.com/react-examples/react-examples/tree/master/react-lesson1#readme](https://github.com/react-examples/react-examples/tree/master/react-lesson1#readme)
+#### GitHub にサンプルを置いた
+
+Lesson1 までは HTML 100% のリポジトリだ。
+
+![HTML 100%](../images/html-100-percent.png)
+
++ [react-examples/react-lesson1 - GitHub](https://github.com/react-examples/react-examples/tree/master/react-lesson1#readme)
+
+#### Qiita の投稿記事
+
++ [React v15をやってみよう (1) - まずはHTMLだけで - Qiita](http://qiita.com/LightSpeedC/items/484fec44a2ca15e48f49)
