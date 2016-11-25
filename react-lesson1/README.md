@@ -69,7 +69,7 @@ $ npm i -D react react-dom
 
 - - -
 
-### 3. react11-js-es5.htmlを作成し、ブラウザで開く
+### 3. ES5だけを含んだHTMLファイルで書く
 
 Webなので、まずはHTMLファイルを作る。
 
@@ -123,7 +123,7 @@ setInterval(function () {
 
 - - -
 
-### 4. react12-js-es6.htmlを作成し、ブラウザで開く
+### 4. ES6を含んだHTMLファイルで書く
 
 ES5は今時じゃないので、ES6(ES2015)で書く。  
 
@@ -172,7 +172,9 @@ setInterval(() =>
 
 - - -
 
-### 5. とりあえず簡単にJSXを使うために古いv5系のbabel-coreを使ってみる
+### 5. JSXを使うためにbabel@5を使ってみる
+
+とりあえず古いv5系のbabel-coreをインストする。
 
 ```bash
 $ npm i -D babel-core@5
@@ -184,10 +186,11 @@ babel-core@6は、後でやる。
 
 - - -
 
-### 6. react13-jsx-babel5.htmlを作成し、ブラウザで開く
+### 6. JSXを含んだHTMLファイルで書く
 
 `React.createElement()`はウザイのでJSXで書く。  
 今回は古いbabel-core@5を使っておく。  
+babelを使ってES6+JSXをES5に変換しているので今度はIE11でも動くよ。
 ※この方法は非推奨だ。効率が悪いので後で変更するよ。
 
 ```html:react13-jsx-babel5.html
@@ -226,7 +229,7 @@ setInterval(() =>
 
 - - -
 
-### 7. react14-jsx-props.htmlを作成し、ブラウザで開く
+### 7. プロパティpropsを使ってみる
 
 `<Hello name="React!">`の様に`props`を使ってみる。  
 コンポーネント側では`this.props.name`として使える。
@@ -259,7 +262,7 @@ ReactDOM.render(<Hello name="React!"/>, container);
 
 - - -
 
-### 8. react15-jsx-sfc.htmlを作成し、ブラウザで開く
+### 8. 状態のないコンポーネントはSFCを使う
 
 `props`くらいしか使わず、状態を持たないコンポーネントなら  
 `SFC` (Stateless Functional Components) を使う。  
@@ -290,7 +293,7 @@ ReactDOM.render(<Hello name="React!"/>, container);
 
 - - -
 
-### 9. react16-jsx-count.htmlを作成し、ブラウザで開く
+### 9. 状態stateを持つコンポーネントを実装してみる
 
 中に状態`state`を持つコンポーネントの例として、カウンターを作る。  
 状態を初期化するには`constructor()`内で`this.state = {...};`とする。
@@ -353,7 +356,7 @@ ReactDOM.render(<LegacyCounter/>, container);
 
 - - -
 
-### 10. react17-jsx-inherit.htmlを作成し、ブラウザで開く
+### 10. 汎用コンポーネントを継承してみる
 
 カウンターの例を改良する。
 
@@ -430,7 +433,7 @@ ReactDOM.render(<MyCounter/>, container);
 
 - - -
 
-### 11. react18-jsx-todo.htmlを作成し、ブラウザで開く
+### 11. 簡単なTo Do Listアプリを実装してみる
 
 では、ちょっと、To Do List アプリを作ってみる。
 
