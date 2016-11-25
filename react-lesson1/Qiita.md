@@ -1,10 +1,9 @@
+http://qiita.com/LightSpeedC/items/484fec44a2ca15e48f49
 React v15をやってみよう (1) - まずはHTMLだけで
-====
-
 まずはHTMLファイルだけで、React.js v15を感じてみよう。
 ----
 
-![React.js 15.4](../images/react-15-4.png)
+![React.js 15.4](https://raw.githubusercontent.com/react-examples/react-examples/master/images/react-15-4.png)
 
 - - -
 
@@ -14,9 +13,9 @@ React v15をやってみよう (1) - まずはHTMLだけで
 
 それではエディタ以外になんの武器も持っていない人も、順番に装備していきましょう。
 
-とりあえず最初は**Node.js**, **npm**から...  
-今のところGrunt, Gulp, Browserify, WebPack, TypeScriptとか、全部無しで!  
-Web/HTTPサーバーも無しで!  
+とりあえず最初は**Node.js**, **npm**から...
+今のところGrunt, Gulp, Browserify, WebPack, TypeScriptとか、全部無しで!
+Web/HTTPサーバーも無しで!
 素の**React.js**から始めましょう。
 
 - - -
@@ -48,7 +47,7 @@ $ cd react-lesson1
 $ npm init -y
 ```
 
-`npm init`で`package.json`が作成されるので、内容を確認しておく。  
+`npm init`で`package.json`が作成されるので、内容を確認しておく。
 descriptionやauthorくらいは書いておこう。
 
 ※既に`package.json`がある場合は`npm install`で依存ファイルをダウンロードできる。
@@ -57,14 +56,14 @@ descriptionやauthorくらいは書いておこう。
 
 ### 2. reactとreact-domをインストール
 
-`React.js`をやるのに最低限必要なもの、  
+`React.js`をやるのに最低限必要なもの、
 それは`react`と`react-dom`だ。
 
 ```bash
 $ npm i -D react react-dom
 ```
 
-`node_modules`ディレクトリの下に`react`と`react-dom`ができる。  
+`node_modules`ディレクトリの下に`react`と`react-dom`ができる。
 `package.json`の`devDependencies`に追加されたことを確認。
 
 - - -
@@ -73,7 +72,7 @@ $ npm i -D react react-dom
 
 Webなので、まずはHTMLファイルを作る。
 
-古いやり方だけどES5のみで作ったのでIE11でも動く。  
+古いやり方だけどES5のみで作ったのでIE11でも動く。
 IE11やChromeやFirefoxなどのブラウザで直接HTMLファイルを開いてみる。
 
 以下の様に表示された?
@@ -82,11 +81,11 @@ IE11やChromeやFirefoxなどのブラウザで直接HTMLファイルを開い�
 Hello Legacy React ES5! ‎12‎:34‎:56
 ```
 
-`React.createClass()`でHelloというクラスを作成している。  
-HelloクラスのrenderメソッドでHTMLを生成する感じだ。  
-`<div>Hello</div>`なら`React.createElement('div', null, 'Hello')`となる。  
-`<Hello/>`なら`React.createElement(Hello)`となる。  
-最後に`ReactDOM.render()`で実際のDOM要素`container`に反映する。  
+`React.createClass()`でHelloというクラスを作成している。
+HelloクラスのrenderメソッドでHTMLを生成する感じだ。
+`<div>Hello</div>`なら`React.createElement('div', null, 'Hello')`となる。
+`<Hello/>`なら`React.createElement(Hello)`となる。
+最後に`ReactDOM.render()`で実際のDOM要素`container`に反映する。
 更にsetIntervalを使って何度もReactDOM.renderを実行する。
 
 ※素の`React.createClass`や`React.createElement`は意識しなくてよい。
@@ -125,9 +124,9 @@ setInterval(function () {
 
 ### 4. react12-js-es6.htmlを作成し、ブラウザで開く
 
-ES5は今時じゃないので、ES6(ES2015)で書く。  
+ES5は今時じゃないので、ES6(ES2015)で書く。
 
-ES6で作ったので今度はIE11では動かない。  
+ES6で作ったので今度はIE11では動かない。
 ChromeやFirefoxなどのブラウザで直接HTMLファイルを開いてみる。
 
 以下の様に表示された?
@@ -136,9 +135,9 @@ ChromeやFirefoxなどのブラウザで直接HTMLファイルを開いてみる
 Hello Legacy React ES6! 12:34:56
 ```
 
-今度は`React.createClass`を使わず`React.Component`クラスを継承し  
-`Hello`クラスをclass構文で作成する。  
-ちょっとマシになったが、まだ`React.createElement`がウザい。
+今度は`React.createClass`を使わず `React.Component`クラスを継承し
+`Hello`クラスをclass構文で作成する。
+ちょっとマシになったが、まだ `React.createElement`がウザい。
 
 ```html:react12-js-es6.html
 <!DOCTYPE html>
@@ -178,16 +177,16 @@ setInterval(() =>
 $ npm i -D babel-core@5
 ```
 
-以下を持ってきても良い。  
-https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.min.js  
+以下を持ってきても良い。
+https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.min.js 
 babel-core@6は、後でやる。
 
 - - -
 
 ### 6. react13-jsx-babel5.htmlを作成し、ブラウザで開く
 
-`React.createElement()`はウザイのでJSXで書く。  
-今回は古いbabel-core@5を使っておく。  
+`React.createElement()`はウザイのでJSXで書く。
+今回は古いbabel-core@5を使っておく。
 ※この方法は非推奨だ。効率が悪いので後で変更するよ。
 
 ```html:react13-jsx-babel5.html
@@ -228,7 +227,7 @@ setInterval(() =>
 
 ### 7. react14-jsx-props.htmlを作成し、ブラウザで開く
 
-`<Hello name="React!">`の様に`props`を使ってみる。  
+`<Hello name="React!">`の様に`props`を使ってみる。
 コンポーネント側では`this.props.name`として使える。
 
 ```html:react14-jsx-props.html
@@ -261,8 +260,8 @@ ReactDOM.render(<Hello name="React!"/>, container);
 
 ### 8. react15-jsx-sfc.htmlを作成し、ブラウザで開く
 
-`props`くらいしか使わず、状態を持たないコンポーネントなら  
-`SFC` (Stateless Functional Components) を使う。  
+`props`くらいしか使わず、状態を持たないコンポーネントなら
+`SFC` (Stateless Functional Components) を使う。
 classの場合の`this.props.xxx`を、SFCでは`props.xxx`と変更すること。
 
 ```html:react15-jsx-sfc.html
@@ -292,14 +291,14 @@ ReactDOM.render(<Hello name="React!"/>, container);
 
 ### 9. react16-jsx-count.htmlを作成し、ブラウザで開く
 
-中に状態`state`を持つコンポーネントの例として、カウンターを作る。  
+中に状態`state`を持つコンポーネントの例として、カウンターを作る。
 状態を初期化するには`constructor()`内で`this.state = {...};`とする。
 
-明らかに異質な`this.onIncr.bind(this)`等が気持ち悪いよね。  
-でも、そうしないと`onCLick={this.onIncr}`で`this`が違うものを指してしまう。  
+明らかに異質な`this.onIncr.bind(this)`等が気持ち悪いよね。
+でも、そうしないと`onCLick={this.onIncr}`で`this`が違うものを指してしまう。
 onIncrとonDecrで違う2種類のやり方を試してみた。
 
-`this.setState()`で新しい状態をセットする。状態オブジェクトを引数に渡す。  
+`this.setState()`で新しい状態をセットする。状態オブジェクトを引数に渡す。
 (実際には状態オブジェクトのshallow mergeだ)
 
 ```html:react16-jsx-count.html
@@ -357,14 +356,14 @@ ReactDOM.render(<LegacyCounter/>, container);
 
 カウンターの例を改良する。
 
-onIncrとonDecrの様にonで始まるメソッド、つまりイベントハンドラーには  
-忘れないように自動的にthisをbindしておいてくれるMyComponentを作った。  
+onIncrとonDecrの様にonで始まるメソッド、つまりイベントハンドラーには
+忘れないように自動的にthisをbindしておいてくれるMyComponentを作った。
 on以外ではhandleで始まるメソッドにも、thisをbindしておくのもいいかも。
 
-`this.setState()`に関数を渡すこともできる。こちらの方がベターなのかな。  
+`this.setState()`に関数を渡すこともできる。こちらの方がベターなのかな。
 `this.setState((prevState, props) => ({}))`の様に前の状態とpropsが渡される。
 
-`<button>...</button>`を`<button children="..."/>`の様に記述することもできる。  
+`<button>...</button>`を`<button children="..."/>`の様に記述することもできる。
 閉じタグを省略できるので便利だ。
 
 ```html:react17-jsx-inherit.html
@@ -434,10 +433,10 @@ ReactDOM.render(<MyCounter/>, container);
 
 では、ちょっと、To Do List アプリを作ってみる。
 
-データモデルとして、Taskクラスのインスタンスのリストを考える。  
-title: string, done: booleanなどを内部の属性として持つクラスだ。  
-Reactコンポーネントとして、少し大きいが、ToDoListAppクラスを考える。  
-新規タスク用のタイトル入力用のinputや、追加・削除のボタン、などだ。  
+データモデルとして、Taskクラスのインスタンスのリストを考える。
+title: string, done: booleanなどを内部の属性として持つクラスだ。
+Reactコンポーネントとして、少し大きいが、ToDoListAppクラスを考える。
+新規タスク用のタイトル入力用のinputや、追加・削除のボタン、などだ。
 タスクの表示にはタイトル以外に終わったことを示すチェックボックスなどを考える。
 
 ```html:react18-jsx-todo.html
@@ -574,9 +573,9 @@ ReactDOM.render(<ToDoListApp/>, container);
 
 とりあえず、一気に書いてみた。
 
-ちなみにこの記事に書いてあるやり方は  
-production には耐えられないよ。  
-だけど1つのHTMLファイルで始められるので、  
+ちなみにこの記事に書いてあるやり方は
+production には耐えられないよ。
+だけど1つのHTMLファイルで始められるので、
 勉強を始めるのには、いいんじゃないかな。
 
 この記事の概要と次回以降の課題：
@@ -595,10 +594,6 @@ Lesson 2 に続く。と、思う。
 
 Lesson1 までは HTML 100% のリポジトリだ。
 
-![HTML 100%](../images/html-100-percent.png)
+![HTML 100%](https://raw.githubusercontent.com/react-examples/react-examples/master/images/html-100-percent.png)
 
 + [react-examples/react-lesson1 - GitHub](https://github.com/react-examples/react-examples/tree/master/react-lesson1#readme)
-
-#### Qiita の投稿記事
-
-+ [React v15をやってみよう (1) - まずはHTMLだけで - Qiita](http://qiita.com/LightSpeedC/items/484fec44a2ca15e48f49)
