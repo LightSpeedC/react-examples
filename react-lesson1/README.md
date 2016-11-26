@@ -1,14 +1,13 @@
 React v15をやってみよう (1) - まずはHTMLだけで
 ====
 
-まずはHTMLファイルだけで、React.js v15を感じてみよう。
-----
+## まずはHTMLファイルだけで、React.js v15を感じてみよう。
 
 ![React.js 15.4](../images/react-15-4.png)
 
 - - -
 
-### はじめに
+## はじめに
 
 **React.js v15**を始めたいけど、たくさんキーワードやツールが出てきて、環境をそろえろとか、どこから手を付けていいのかわからなくて、いつまでも始められない、初心者の方のために、この記事を書いています。
 
@@ -21,7 +20,7 @@ Web/HTTPサーバーも無しで!
 
 - - -
 
-### 0. Node.jsとnpmをインストール
+## 0. Node.jsとnpmをインストール
 
 https://nodejs.org/ja/ からv6系(推奨版)をダウンロードしてインストする。
 
@@ -38,7 +37,7 @@ v3.x.x
 
 - - -
 
-### 1. ディレクトリを作成しnpmを初期化
+## 1. ディレクトリを作成しnpmを初期化
 
 まず、Webプロジェクトを開始する時に最初にやることだ。
 
@@ -55,7 +54,7 @@ descriptionやauthorくらいは書いておこう。
 
 - - -
 
-### 2. reactとreact-domをインストール
+## 2. reactとreact-domをインストール
 
 `React.js`をやるのに最低限必要なもの、  
 それは`react`と`react-dom`だ。
@@ -69,7 +68,7 @@ $ npm i -D react react-dom
 
 - - -
 
-### 3. ES5だけを含んだHTMLファイルで書く
+## 3. ES5だけを含んだHTMLファイルで書く
 
 Webなので、まずはHTMLファイルを作る。
 
@@ -123,7 +122,7 @@ setInterval(function () {
 
 - - -
 
-### 4. ES6を含んだHTMLファイルで書く
+## 4. ES6を含んだHTMLファイルで書く
 
 ES5は今時じゃないので、ES6(ES2015)で書く。  
 
@@ -172,7 +171,7 @@ setInterval(() =>
 
 - - -
 
-### 5. JSXを使うためにbabel@5を使ってみる
+## 5. JSXを使うためにbabel@5を使ってみる
 
 とりあえず古いv5系のbabel-coreをインストする。
 
@@ -186,7 +185,7 @@ babel-core@6は、後でやる。
 
 - - -
 
-### 6. JSXを含んだHTMLファイルで書く
+## 6. JSXを含んだHTMLファイルで書く
 
 `React.createElement()`はウザイのでJSXで書く。  
 今回は古いbabel-core@5を使っておく。  
@@ -229,7 +228,7 @@ setInterval(() =>
 
 - - -
 
-### 7. プロパティpropsを使ってみる
+## 7. プロパティpropsを使ってみる
 
 `<Hello name="React!">`の様に`props`を使ってみる。  
 コンポーネント側では`this.props.name`として使える。
@@ -262,7 +261,7 @@ ReactDOM.render(<Hello name="React!"/>, container);
 
 - - -
 
-### 8. 状態のないコンポーネントはSFCを使う
+## 8. 状態のないコンポーネントはSFCを使う
 
 `props`くらいしか使わず、状態を持たないコンポーネントなら  
 `SFC` (Stateless Functional Components) を使う。  
@@ -293,7 +292,7 @@ ReactDOM.render(<Hello name="React!"/>, container);
 
 - - -
 
-### 9. 状態stateを持つコンポーネントを実装してみる
+## 9. 状態stateを持つコンポーネントを実装してみる
 
 中に状態`state`を持つコンポーネントの例として、カウンターを作る。  
 状態を初期化するには`constructor()`内で`this.state = {...};`とする。
@@ -356,7 +355,7 @@ ReactDOM.render(<LegacyCounter/>, container);
 
 - - -
 
-### 10. 汎用コンポーネントを継承してみる
+## 10. 汎用コンポーネントを継承してみる
 
 カウンターの例を改良する。
 
@@ -433,7 +432,7 @@ ReactDOM.render(<MyCounter/>, container);
 
 - - -
 
-### 11. 簡単なTo Do Listアプリを実装してみる
+## 11. 簡単なTo Do Listアプリを実装してみる
 
 では、ちょっと、To Do List アプリを作ってみる。
 
@@ -573,7 +572,7 @@ ReactDOM.render(<ToDoListApp/>, container);
 
 - - -
 
-### 12. 終わりに
+## 12. 終わりに
 
 とりあえず、一気に書いてみた。
 
@@ -594,7 +593,7 @@ production には耐えられないよ。
 Lesson 2 に続く。と、思う。
 
 
-#### GitHub にサンプルを置いた
+### GitHub にサンプルを置いた
 
 Lesson1 までは HTML 100% のリポジトリだ。
 
@@ -602,6 +601,6 @@ Lesson1 までは HTML 100% のリポジトリだ。
 
 + [react-examples/react-lesson1 - GitHub](https://github.com/react-examples/react-examples/tree/master/react-lesson1#readme)
 
-#### Qiita の投稿記事
+### Qiita の投稿記事
 
 + [React v15をやってみよう (1) - まずはHTMLだけで - Qiita](http://qiita.com/LightSpeedC/items/484fec44a2ca15e48f49)
