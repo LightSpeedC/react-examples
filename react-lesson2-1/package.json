@@ -1,0 +1,27 @@
+{
+  "name": "react-lesson2-1",
+  "version": "0.0.0",
+  "description": "React.js examples Lesson1",
+  "main": "index.js",
+  "private": true,
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/react-examples/react-examples.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "LightSpeedC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/react-examples/react-examples/issues"
+  },
+  "homepage": "https://github.com/react-examples/react-examples#readme"
+}
